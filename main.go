@@ -10,7 +10,7 @@ import (
 	"time"
 )
 
-func Set(e *echo.Echo, clientJSONPath string) {
+func Set(e *echo.Echo, clientJSONPath string, metric string) {
 	e.GET("/ga", func(c echo.Context) error {
 
 		IPAddress := c.RealIP()
@@ -29,7 +29,7 @@ func Set(e *echo.Echo, clientJSONPath string) {
 				{StartDate: "yesterday", EndDate: "today"},
 			},
 			Metrics: []*ga.Metric{
-				{Name: "activeUsers"},
+				{Name: metric},
 			},
 		}
 		weekDay := now.Weekday().String()
@@ -56,7 +56,7 @@ func Set(e *echo.Echo, clientJSONPath string) {
 				{StartDate: thisWeek.Format("2006-01-02"), EndDate: "today"},
 			},
 			Metrics: []*ga.Metric{
-				{Name: "activeUsers"},
+				{Name: metric},
 			},
 		}
 
@@ -66,7 +66,7 @@ func Set(e *echo.Echo, clientJSONPath string) {
 			},
 
 			Metrics: []*ga.Metric{
-				{Name: "activeUsers"},
+				{Name: metric},
 			},
 		}
 		year := &ga.RunReportRequest{
@@ -76,7 +76,7 @@ func Set(e *echo.Echo, clientJSONPath string) {
 			},
 
 			Metrics: []*ga.Metric{
-				{Name: "activeUsers"},
+				{Name: metric},
 			},
 		}
 		allTime := &ga.RunReportRequest{
@@ -86,7 +86,7 @@ func Set(e *echo.Echo, clientJSONPath string) {
 			},
 
 			Metrics: []*ga.Metric{
-				{Name: "activeUsers"},
+				{Name: metric},
 			},
 		}
 
