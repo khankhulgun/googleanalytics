@@ -1,4 +1,4 @@
-package ga
+package googleanalytics
 
 import (
 	"context"
