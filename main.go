@@ -29,7 +29,7 @@ func Set(e *echo.Echo, clientJSONPath string) {
 				{StartDate: "yesterday", EndDate: "today"},
 			},
 			Metrics: []*ga.Metric{
-				{Name: "screenPageViews"},
+				{Name: "activeUsers"},
 			},
 		}
 		weekDay := now.Weekday().String()
@@ -56,7 +56,7 @@ func Set(e *echo.Echo, clientJSONPath string) {
 				{StartDate: thisWeek.Format("2006-01-02"), EndDate: "today"},
 			},
 			Metrics: []*ga.Metric{
-				{Name: "screenPageViews"},
+				{Name: "activeUsers"},
 			},
 		}
 
@@ -66,7 +66,7 @@ func Set(e *echo.Echo, clientJSONPath string) {
 			},
 
 			Metrics: []*ga.Metric{
-				{Name: "screenPageViews"},
+				{Name: "activeUsers"},
 			},
 		}
 		year := &ga.RunReportRequest{
@@ -76,7 +76,7 @@ func Set(e *echo.Echo, clientJSONPath string) {
 			},
 
 			Metrics: []*ga.Metric{
-				{Name: "screenPageViews"},
+				{Name: "activeUsers"},
 			},
 		}
 		allTime := &ga.RunReportRequest{
@@ -86,7 +86,7 @@ func Set(e *echo.Echo, clientJSONPath string) {
 			},
 
 			Metrics: []*ga.Metric{
-				{Name: "screenPageViews"},
+				{Name: "activeUsers"},
 			},
 		}
 
