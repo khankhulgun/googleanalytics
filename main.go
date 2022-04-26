@@ -11,7 +11,7 @@ import (
 )
 
 func Set(e *echo.Echo, clientJSONPath string) {
-	e.GET("ga/", func(c echo.Context) error {
+	e.GET("/ga", func(c echo.Context) error {
 
 		ctx := context.Background()
 		client, err := ga.NewService(ctx, option.WithCredentialsFile(clientJSONPath))
